@@ -75,7 +75,7 @@ public class VarastoTest {
         double vanhasaldo = varasto.getSaldo();
         varasto.lisaaVarastoon(-1);
         // vapaata tilaa pitäisi vielä olla tilavuus-lisättävä määrä eli 2
-        assertEquals(vanhasaldo, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(vanhasaldo, varasto.getSaldo()+1, vertailuTarkkuus);
     }
     
     @Test
