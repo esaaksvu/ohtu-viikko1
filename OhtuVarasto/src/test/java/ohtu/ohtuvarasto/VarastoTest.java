@@ -47,6 +47,38 @@ public class VarastoTest {
     }
 
     @Test
+    public void lisaaVarastoonLiikaa() {
+        varasto.lisaaVarastoon(varasto.getTilavuus()+1);
+
+        // vapaata tilaa pitäisi vielä olla tilavuus-lisättävä määrä eli 2
+        assertEquals(varasto.getTilavuus(), varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void otaVarastostaLikaa() {
+        varasto.otaVarastosta(varasto.getSaldo()+1);
+
+        // vapaata tilaa pitäisi vielä olla tilavuus-lisättävä määrä eli 2
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void otaVarastostaNegat() {
+        double vanhasaldo = varasto.getSaldo();
+        varasto.otaVarastosta(-1);
+        // vapaata tilaa pitäisi vielä olla tilavuus-lisättävä määrä eli 2
+        assertEquals(vanhasaldo, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void lisaaVarastoonNegat() {
+        double vanhasaldo = varasto.getSaldo();
+        varasto.lisaaVarastoon(-1);
+        // vapaata tilaa pitäisi vielä olla tilavuus-lisättävä määrä eli 2
+        assertEquals(vanhasaldo, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
     public void ottaminenPalauttaaOikeanMaaran() {
         varasto.lisaaVarastoon(8);
 
