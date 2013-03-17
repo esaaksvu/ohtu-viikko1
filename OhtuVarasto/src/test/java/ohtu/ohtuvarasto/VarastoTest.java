@@ -69,7 +69,7 @@ public class VarastoTest {
     public void lisaaVarastoonNegat() {
         double vanhasaldo = varasto.getSaldo();
         varasto.lisaaVarastoon(-1);
-        assertEquals(vanhasaldo, varasto.getSaldo()+1, vertailuTarkkuus); //rikottu testi
+        assertEquals(vanhasaldo, varasto.getSaldo(), vertailuTarkkuus);
     }
     
     @Test
