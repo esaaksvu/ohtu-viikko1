@@ -32,7 +32,7 @@ public class VarastoTest {
 
     @Test
     public void lisaysLisaaSaldoa() {
-        varasto.lisaaVarastoon(7); //Rikottu testi
+        varasto.lisaaVarastoon(8);
 
         // saldon pitäisi olla sama kun lisätty määrä
         assertEquals(8, varasto.getSaldo(), vertailuTarkkuus);
